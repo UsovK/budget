@@ -267,7 +267,7 @@
   </div>
 </div>
 
-<script type="module">
+<script>
 const STORE='familyBudget_v7';
 const MONTHS=['январь','февраль','март','апрель','май','июнь','июль','август','сентябрь','октябрь','ноябрь','декабрь'];
 
@@ -568,7 +568,8 @@ function saveCategory(){
   if(editingCatId){
     const c=state.categories[catType].find(x=>x.id===editingCatId);
     c.name=name; c.icon=pickedIcon; c.color=color;
-  }else    state.categories[catType].push({id:uid(),name,icon:pickedIcon,color});
+  } else {
+    state.categories[catType].push({id:uid(),name,icon:pickedIcon,color});
   }
   editingCatId=null;
   document.getElementById('catName').value='';
